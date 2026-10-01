@@ -4,6 +4,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.TreeMap;
@@ -147,16 +148,18 @@ public final class VNPayUtil {
     }
 
     public static String now() {
-        return LocalDateTime.now()
-                .format(FORMATTER);
+        return LocalDateTime.now(
+                ZoneId.of("Asia/Ho_Chi_Minh")
+        ).format(FORMATTER);
     }
 
     public static String expireDate(
             int minutes) {
 
-        return LocalDateTime.now()
-                .plusMinutes(minutes)
-                .format(FORMATTER);
+        return LocalDateTime.now(
+                ZoneId.of("Asia/Ho_Chi_Minh")
+        ).plusMinutes(minutes)
+         .format(FORMATTER);
     }
 
     public static String newOrderCode() {
