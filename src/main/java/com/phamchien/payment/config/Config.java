@@ -12,14 +12,14 @@ public final class Config {
     public static final String VNP_PAY_URL =
             "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
 
-   public static final String VNP_TMN_CODE =
+    public static final String VNP_TMN_CODE =
                 "SLQPZH3M";
 
-        public static final String VNP_HASH_SECRET =
-                "MEXFJDZBNYMXMMRBCZZREYVKJTWZAETU";
+    public static final String VNP_HASH_SECRET =
+            "MEXFJDZBNYMXMMRBCZZREYVKJTWZAETU";
 
-        public static final String BASE_URL =
-                "http://localhost:8080";
+    public static final String BASE_URL =
+            envOrDefault("BASE_URL", "http://localhost:8080");
 
     public static final String VNP_RETURN_URL =
             BASE_URL + "/vnpay-return";
