@@ -1,0 +1,21 @@
+CREATE DATABASE IF NOT EXISTS PaymentDemo
+CHARACTER SET utf8mb4
+COLLATE utf8mb4_unicode_ci;
+
+USE PaymentDemo;
+
+CREATE TABLE IF NOT EXISTS Payments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_code VARCHAR(100) NOT NULL UNIQUE,
+    amount BIGINT NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    transaction_no VARCHAR(100) NULL,
+    response_code VARCHAR(20) NULL,
+    transaction_status VARCHAR(20) NULL,
+    payment_status VARCHAR(30) NOT NULL DEFAULT 'PENDING',
+    email_status VARCHAR(30) NOT NULL DEFAULT 'NOT_SENT',
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME NULL DEFAULT NULL
+);
+
+SELECT * FROM Payments ORDER BY id DESC;
